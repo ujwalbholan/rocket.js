@@ -39,7 +39,7 @@ V1 uses manual constructor injection. Rocket.js does not include a dependency-in
 Rocket.js V1 requires Node.js 20 or newer and is published as an ES module:
 
 ```bash
-npm install rocket.js
+npm install @ujwa_bholan/rocket.js
 ```
 
 Enable annotations in `tsconfig.json`:
@@ -62,7 +62,7 @@ import {
   Get,
   Response,
   Rocket,
-} from "rocket.js";
+} from "@ujwa_bholan/rocket.js";
 
 @Controller()
 class AppController {
@@ -108,7 +108,7 @@ import {
   Request,
   Response,
   Rocket,
-} from "rocket.js";
+} from "@ujwa_bholan/rocket.js";
 
 interface User {
   id: number;
@@ -242,8 +242,8 @@ import type {
   Middleware,
   NextFunction,
   Request,
-} from "rocket.js";
-import { Response } from "rocket.js";
+} from "@ujwa_bholan/rocket.js";
+import { Response } from "@ujwa_bholan/rocket.js";
 
 class LoggerMiddleware implements Middleware {
   execute(request: Request, next: NextFunction): Response {
@@ -268,7 +268,7 @@ a `Response`.
 Rate limiting is optional and uses the same object-based middleware API:
 
 ```ts
-import { RateLimitMiddleware } from "rocket.js";
+import { RateLimitMiddleware } from "@ujwa_bholan/rocket.js";
 
 app.use(
   new RateLimitMiddleware({

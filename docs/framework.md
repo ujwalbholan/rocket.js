@@ -36,7 +36,12 @@ Application responsibilities:
 The preferred user-facing style is class and object based:
 
 ```ts
-import { Controller, Get, Response, Rocket } from "rocket.js";
+import {
+  Controller,
+  Get,
+  Response,
+  Rocket,
+} from "@ujwa_bholan/rocket.js";
 
 @Controller()
 class HealthController {
@@ -94,7 +99,7 @@ import {
   type Middleware,
   type NextFunction,
   type RouteHandler,
-} from "rocket.js";
+} from "@ujwa_bholan/rocket.js";
 ```
 
 `ProtocolServer` is returned by `await app.listen()`. Lower-level routing, parsing, middleware pipeline, and connection-buffer classes remain available for advanced learning and framework extension.
@@ -190,7 +195,12 @@ Rocket
 Package users should create their own application object and controller instances:
 
 ```ts
-import { Controller, Get, Rocket, Response } from "rocket.js";
+import {
+  Controller,
+  Get,
+  Rocket,
+  Response,
+} from "@ujwa_bholan/rocket.js";
 
 @Controller()
 class AppController {
@@ -305,8 +315,12 @@ Rocket.js does not include automatic dependency injection in V1.
 Middleware is object based:
 
 ```ts
-import type { Middleware, NextFunction, Request } from "rocket.js";
-import { Response } from "rocket.js";
+import type {
+  Middleware,
+  NextFunction,
+  Request,
+} from "@ujwa_bholan/rocket.js";
+import { Response } from "@ujwa_bholan/rocket.js";
 
 class LoggerMiddleware implements Middleware {
   execute(request: Request, next: NextFunction): Response {
@@ -341,7 +355,7 @@ Rocket.js includes a fixed-window, in-memory middleware:
 import {
   RateLimitMiddleware,
   Rocket,
-} from "rocket.js";
+} from "@ujwa_bholan/rocket.js";
 
 const app = new Rocket();
 

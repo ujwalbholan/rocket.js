@@ -72,7 +72,7 @@ import {
   Response,
   Rocket,
   type ProtocolServer,
-} from "rocket.js";
+} from "@ujwa_bholan/rocket.js";
 
 @Controller()
 class AppController {
@@ -130,7 +130,10 @@ void Application;
     String.raw`
 import assert from "node:assert/strict";
 import net from "node:net";
-import { Response, Rocket } from "rocket.js";
+import {
+  Response,
+  Rocket,
+} from "@ujwa_bholan/rocket.js";
 
 const app = new Rocket();
 app.get("/", () => Response.text("Installed Rocket.js works"));

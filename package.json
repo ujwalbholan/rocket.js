@@ -1,5 +1,5 @@
 {
-  "name": "rocket.js",
+  "name": "@ujwa_bholan/rocket.js",
   "version": "1.0.0",
   "description": "A fast, flexible, easy to learn Node.js backend framework built on node:net.",
   "license": "ISC",
