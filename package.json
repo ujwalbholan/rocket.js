@@ -1,0 +1,70 @@
+{
+  "name": "rocket.js",
+  "version": "1.0.0",
+  "description": "A fast, flexible, easy to learn Node.js backend framework built on node:net.",
+  "license": "ISC",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.20.0",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist/src/index.*",
+    "dist/src/rocket.*",
+    "dist/src/annotations/controller",
+    "dist/src/controller",
+    "dist/src/errors",
+    "dist/src/middleware",
+    "dist/src/parser",
+    "dist/src/protocol",
+    "dist/src/router",
+    "dist/src/server",
+    "dist/src/types/middleware.js",
+    "dist/src/types/middleware.js.map",
+    "dist/src/types/middleware.d.ts",
+    "dist/src/types/middleware.d.ts.map",
+    "dist/src/types/route.type.*",
+    "docs",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "node",
+    "net",
+    "backend",
+    "framework",
+    "http",
+    "tcp",
+    "protocol",
+    "typescript",
+    "annotations"
+  ],
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "check": "npm test && npm run test:package",
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "start": "node dist/src/example/app.js",
+    "client": "npm run build && node dist/src/example/client/client.js",
+    "dev": "npm run build && node dist/src/example/app.js",
+    "prepack": "npm run build",
+    "test": "npm run build && node --test tests/*.test.js",
+    "test:package": "node scripts/package-smoke.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "typescript": "^6.0.3"
+  }
+}
